@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% load static %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    </head>
+    <body img src="{% static 'images/login.jpeg' %}" class="img-circle" alt="Cinque Terre" style="margin-left: -10%">
+    <form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 align="center" style="margin-left:60px;margin-top: 10%;"><u>Login</u></h1>
+    <dev class="container" align="center">
+        <form method="POST">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="LogIn" class="btn btn-success" style=" margin-left: 45%;">
+            <a href="/register" type="button" class="btn btn-success">Register</a>
+        </form>
+    </dev>
+{% endblock %}
+</body>
+</html>

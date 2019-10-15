@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body align="center" align>
+
+<div class="login-box">
+        <h1 style="margin-top: 100px"><u>Register</u></h1>
+
+        <form method="post" align="center">{% csrf_token %}
+            <input type="text" name="first_name" placeholder="First Name"
+                   style="height: 40px;width: 30%;text-align: center;border: solid #EBE"><br>
+            <input type="text" name="last_name" placeholder="Last Name"
+                   style="height: 40px;width: 30%;text-align: center;border: solid #CF5"><br>
+
+            <input type="text" name="username" placeholder="Username"
+                   style="height: 40px;width: 30%;text-align: center;border: solid #EBE"><br>
+            <input type="password" name="password1" placeholder="Password"
+                   style="height: 40px;width: 30%;text-align: center;border: solid #CF5"><br>
+            <input type="password" name="password2" placeholder="confirm Password"
+                   style="height: 40px;width: 30%;text-align: center;border: solid #EBE"><br><br>
+            <input type="submit" value="Register" class="btn btn-success "/>
+            <a href="/accounts/login" type="button" class="btn btn-success">Login</a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

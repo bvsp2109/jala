@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+{% extends 'myapp/base.login.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+</head>
+{% block 1body_block %}
+<body background="{% static 'images/front.jpg' %}" alt="My image0"/>
+    <h3 style="margin-left:75%; color: #CCFF55"><i> Welcome : <b style="color: gold">{{user.first_name|upper}}</b></i></h3>
+<div class="jumbotron">
+    <div class = "container">
+        <h2 align="center" >
+            WELCOME TO</h2><br>
+         <h1 align="center" >
+             <b><i>JALA TECHNOLOGIES</i></b>
+        </h1>
+        <h2>
+            <marquee behavior="scroll" direction="left">
+                *Hire the most qualified candidates. *Hire your next pool of entry level Engineers
+            </marquee>
+            <marquee behavior="scroll" direction="left">
+                
+            </marquee>
+        </h2>
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

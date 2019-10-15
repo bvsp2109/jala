@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    {% load staticfiles %}
+    {% load crispy_forms_tags %}
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Register forms</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'css/feed.css' %}">
+    </head>
+    <body>
+    <div class="container">
+    <div class="col-sm-6" style="margin-top: 50px">
+    <form style="margin-left: 70%; align:center">
+        {% csrf_token %}
+        <table>
+            <div class="col-md-8">
+                {{ form.First_Name.label_tag }}
+                {{ form.First_Name.errors }}
+                {{ form.First_Name }}
+            </div>
+            <div class="col-md-8">
+                {{ form.Last_Name.label_tag }}
+                {{ form.Last_Name.errors }}
+                {{ form.Last_Name }}
+            </div>
+            <div class="col-md-8">
+                {{ form.Email_id.label_tag }}
+                {{ form.Email_id.errors }}
+                {{ form.Email_id }}
+            </div>
+            <div class="col-md-8">
+                {{ form.Location.label_tag }}
+                {{ form.Location.errors }}
+                {{ form.Location }}
+            </div>
+            <div class="col-md-8">
+                {{ form.Massage.label_tag }}
+                {{ form.Massage.errors }}
+                {{ form.Massage }}
+            </div>
+            <div class="col-md-8">
+                {{ form.Resume.label_tag }}
+                {{ form.Resume.errors }}
+                {{ form.Resume }}
+            </div>
+            <br>
+            <div class="col-md-8">
+                <input type="submit" value="Submit" class="btn btn-success" align="center">
+            </div>
+        </table>
+    </form>
+{% endblock %}
+
+</div>
+</div>
+</body>
+</html>
